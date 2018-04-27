@@ -1,0 +1,246 @@
+{% extends "layout.html" %}
+{% block title %}
+    注册
+{% endblock %}
+
+{% block body %}
+    <div class="container" style="background-color:#AAAAAA">
+        <form class="form-horizontal" method="post" style="padding: 30px 100px 10px;"
+              action="{{ url_for('register') }}" id="nqs-add-userxinxi-form">
+
+            <fieldset>
+                <legend>注册账号</legend>
+
+            </fieldset>
+
+            <div class="form-group">
+                <label for="account" class="col-sm-2 control-label">账号：</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="account" name="account" required autofocus>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="phone" class="col-sm-2 control-label">手机号码：</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="phone" name="phone" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="verificationCode" class="col-sm-2 control-label">短信校验码：</label>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" id="verificationCode"
+                           name="verificationCode" placeholder="输入手机验证码">
+                </div>
+                <div style="display: inline">
+                    <button type="button" class="btn btn-info">获取验证码</button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="password" class="col-sm-2 control-label">密码：</label>
+                <div class="col-sm-4">
+                    <input type="password" class="form-control" id="psw"
+                           name="psw" required>
+                </div>
+                <div style="display: inline">
+                    <label class="help-block">6-16位字母、数字、符号、区分大小写</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="repsw" class="col-sm-2 control-label">再输一次：</label>
+                <div class="col-sm-4">
+                    <input type="password" class="form-control" id="repsw" name="repsw" onblur="edit()" required>
+                </div>
+                <!--提示信息-->
+                <div class="tip">
+                    <i></i>
+                    <span></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="nickname" class="col-sm-2 control-label">昵称：</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="nickname" name="nickname">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="realname" class="col-sm-2 control-label">真实姓名：</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="realname"
+                           placeholder="输入真实姓名" name="realname" required>
+                </div>
+                <div style="display: inline">
+                    <label class="help-block">真实姓名</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="sex" class="col-sm-2 control-label">性别：</label>
+                <div class="col-sm-4">
+                    &nbsp; &nbsp;<input type="radio" name="sex" id="sex_m" value="男"
+                                        checked="checked"> &nbsp;男 &nbsp; &nbsp; &nbsp; &nbsp;
+                    &nbsp; &nbsp;<input type="radio" name="sex" id="sex_w" value="女">
+                    &nbsp;女
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="idcardnumber" class="col-sm-2 control-label">身份证号：</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="idcardnumber" name="idcardnumber" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email" class="col-sm-2 control-label">Email：</label>
+                <div class="col-sm-4">
+                    <input type="email" class="form-control" id="email"
+                           placeholder="Email" name="email" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="address" class="col-sm-2 control-label">地址：</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="address" name="address" required>
+                </div>
+            </div>
+
+            <div class="form-group col-sm-offset-6">
+
+                <div class="col-sm-2"></div>
+                <div class="checkbox col-sm-3">
+                    <label><input type="checkbox" name="clause">我已阅读并接受</label> <a href="#"
+                                                                                   style="text-decoration: underline;"
+                                                                                   target="_blank">注册条款</a>
+                </div>
+                <div class="col-sm-1" >
+                    <button class="btn btn-sm btn-primary btn-info" type="submit"  onblur="success()">确&nbsp;&nbsp; 认
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    {% include "success.html" %}
+{% endblock %}
+{% block styles %}
+    <link href="../static/BootstrapValidator/dist/css/bootstrapValidator.min.css" rel="stylesheet">
+{% endblock %}
+{% block scripts %}
+    <script>
+        function success() {
+            $('#success').modal('show');
+        }
+
+        function tosuccessIndex() {
+             window.location.href = '{{ url_for('index') }}'
+        }
+    </script>
+    <script src="../static/BootstrapValidator/dist/js/bootstrapValidator.min.js"></script>
+
+    <script>
+        $('#nqs-add-userxinxi-form').bootstrapValidator({
+            message: 'This value is not valid',
+            excluded: [':disabled'],//[':disabled', ':hidden', ':not(:visible)'] //设置隐藏组件可验证
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                account: {
+                    message: '账号称验证失败',
+                    validators: {
+                        notEmpty: {
+                            message: '账号不能为空'
+                        },
+                        stringLength: {
+                            min: 6,
+                            max: 30,
+                            message: '账号长度必须在6到30之间'
+                        }
+                    }
+                },
+                uiSex: {
+                    message: '性别称验证失败',
+                    validators: {
+                        notEmpty: {
+                            message: '性别不能为空'
+                        }
+                    }
+                },
+                phone: {
+                    message: '手机号验证失败',
+                    validators: {
+                        notEmpty: {
+                            message: '手机号不能为空'
+                        },
+                        stringLength: {
+                            min: 11,
+                            max: 11,
+                            message: '请输入11位手机号码'
+                        },
+                        regexp: {
+                            regexp: /^1[3587][0-9]{9}$/,
+                            message: '请输入正确的手机号码'
+                        }
+                    }
+                },
+                IdentificationCard: {
+                    message: '身份证验证失败',
+                    validators: {
+                        notEmpty: {
+                            message: '身份证不能为空'
+                        },
+                        stringLength: {
+                            min: 18,
+                            max: 18,
+                            message: '请输入18位身份证号码'
+                        },
+                        regexp: {
+                            regexp: /^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$|^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}([0-9]|X)$/,
+                            message: '请输入正确的身份证号码'
+                        }
+                    }
+                },
+                email: {
+                    message: '邮箱失败',
+                    validators: {
+                        notEmpty: {
+                            message: '邮箱不能为空'
+                        },
+                        emailAddress: {
+                            message: '请输入正确的邮件地址如：123@qq.com'
+                        }
+                    }
+                },
+                uiRegisterType: {
+                    message: '认证类型失败',
+                    validators: {
+                        notEmpty: {
+                            message: '认证类型不能为空'
+                        }
+                    }
+                },
+                realname: {
+                    message: '真实姓名验证失败',
+                    validators: {
+                        notEmpty: {
+                            message: '真实姓名不能为空'
+                        },
+                        regexp: {
+                            regexp: /[^u4E00-u9FA5]/,
+                            message: '真实姓名只能输入汉字'
+                        }
+                    }
+                }
+
+            }
+        });
+    </script>
+{% endblock %}

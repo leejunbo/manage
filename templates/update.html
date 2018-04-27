@@ -1,0 +1,27 @@
+<div class="modal fade" id="update" tabindex="-1" role="dialog" aria-labelledby="editModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="editModalLabel">信息修改</h4>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="id">
+                <div>
+                    <label for="Host" class="control-label">域名：</label>
+                    <input type="text" class="form-control  text-input" id="Host" required autofocus>
+                </div>
+                <div>
+                    <label for="IP" class="control-label">IP:</label>
+                    <input type="text" class="form-control text-input" id="IP" required>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" onclick="update()">提交更改</button>
+            </div>
+        </div>
+    </div>
+</div>

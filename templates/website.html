@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block body %}
+    <div class="container col-md-12">
+        <div class="col-md-6">
+            <button type="button" onclick='link_to("https://pc.qq.com/")'
+                    style="width: 500px;color: #1516ff;background-color: #00AA88">腾讯软件中心
+            </button>
+            <button type="button" onclick='link_to("http://www.google.com.sg")'
+                    style="width: 500px;color: #1516ff;background-color: #00AA88">google
+            </button>
+            <button type="button" onclick='link_to("https://www.baidu.com")'
+                    style="width: 500px;color: #161fff;background-color: #00AA88">baidu
+            </button>
+            <button type="button" onclick='link_to("https://inv-veri.chinatax.gov.cn/")'
+                    style="width: 500px;color: #161fff;background-color: #00AA88">国家税务发票验真
+            </button>
+             <button type="button" onclick='link_to(" http://www.tensorfly.cn/tfdoc/tutorials/recurrent.html")'
+                    style="width: 500px;color: #161fff;background-color: #00AA88">递归神经网络
+            </button>
+        </div>
+    </div>
+    <div class="col-md-6">
+    </div>
+{% endblock %}
+{% block scripts %}
+    <script type="text/javascript">
+        function link_to(address) {
+            window.location.href = address;
+        }
+    </script>
+{% endblock %}

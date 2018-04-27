@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <div class="panel panel-default">
+        <div class="panel-heading">作业信息</div>
+        <div class="panel-body">
+            <table id="domain" class="display" width="100%" style="table-layout:fixed">
+                <thead>
+                <tr>
+                    <th>编号</th>
+                    <th>域名</th>
+                    <th>IP</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block scripts %}
+    <script>
+        var domain_col = [
+            {data: "id"},
+            {data: "host"},
+            {data: "ip"}
+        ];
+         console.log(domain_col);
+        $(document).ready(function () {
+            $.get("{{ url_for('all')}}", function (data) {
+                console.log(data);
+                console.log(data[0]);
+                 console.log(data[1]);
+                 console.log(data[2]);
+                $('#dimain').DataTable({
+                    columns: domain_col,
+                    data: data.data,
+                    lengthMenu: [[50, 100, -1], [50, 100, "All"]],
+                    columnDefs: [
+                        {
+                            render: function (data) {
+                                return "<div style='word-wrap:break-word'>" + data + "</div>";
+                            },
+                            targets: [0, 2]
+                        }
+                    ]
+                });
+            });
+            $('#domain').removeClass('display').addClass('table table-striped table-bordered table-hover');
+        });
+    </script>
+{% endblock %}

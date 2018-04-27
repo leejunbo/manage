@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="container">
+    <h1>登录/LOGIN</h1>
+        <form class="cont">
+        <div>
+            <div><i><img src="../static/images/icon01.png"></i><input type="text" placeholder="请输入WangID号码"></div>
+            <div><i><img src="../static/images/icon02.png"></i><input type="password" placeholder="请输入密码"></div>
+            <div class="yzm">
+                <i><img src="../static/images/icon03.png"></i><input type="text" placeholder="请输入验证码">
+                <label><img src="../static/images/yzm.png"></label>
+            </div>
+
+                <a href="password.html">忘记密码？</a>
+                <a href="register.html">没有帐号？免费注册！</a>
+
+            <button type="submit">登 录</button>
+        </div>
+        </form>
+</div>
+{% endblock %}

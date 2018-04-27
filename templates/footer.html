@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-sm-7">
+        <div class="dataTables_paginate paging_simple_numbers" id="nodes_paginate">
+            <ul class="pagination">
+                {% if datas.show_shouye_status==1 %}
+                    <li class="paginate_button"><a class="page-link" href="{{ url_for('show_entries') }}?p=1">首页</a></li>
+                    <li class="paginate_button"><a class="page-link" href="{{ url_for('show_entries') }}?p={{ datas.p-1 }}">上一页</a>
+                    </li>
+                {% endif %}
+
+                {% for dic in datas.dic_list %}
+                    {% if dic==datas.p %}
+                        <li class="paginate_button active"><a class="page-link"
+                                                        href="{{ url_for('show_entries') }}?p={{ dic }}">{{ dic }}</a>
+                        </li>
+                    {% else %}
+                        <li class="paginate_button"><a class="page-link"
+                                                 href="{{ url_for('show_entries') }}?p={{ dic }}">{{ dic }}</a></li>
+                    {% endif %}
+                {% endfor %}
+
+                {% if datas.p < datas.total %}
+                    <li class="paginate_button" aria-controls=""><a class="page-link" href="{{ url_for('show_entries') }}?p={{ datas.p+1}}  ">下一页</a>
+                    </li>
+                    <li class="paginate_button"><a class="page-link" href="{{ url_for('show_entries') }}?p={{ datas.total }}">尾页</a>
+                    </li>
+                {% endif %}
+                <li class="page-item"><a class="page-link"> 共{{ datas.total }}页</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

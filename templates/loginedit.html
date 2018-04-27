@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% block title %}edithost{% endblock %}
+{% block body_attribs %}
+    onload="load()"
+{% endblock %}
+{% block body %}
+    <button onclick="edit()" >ceshi</button>
+    <div class="page-header" style="text-align:center">
+        <h2>域名修改</h2>
+    </div>
+    <form role="form" method=post class=add-IP>
+        <div class="row" style="padding-top:10px;">
+            <div class="col-xs-12">
+                <div class="col-xs-3"></div>
+                <div class="col-xs-3">
+                    <input id="host" type="text" class="form-control" name="host"
+                           placeholder="请输入域名">
+                </div>
+                <div class="col-xs-3">
+                    <input id='ip' type="text" class="form-control" name="ip"
+                           placeholder="请输入IP">
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-primary btn-sm">保存</button>
+                </div>
+
+                <input type="hidden" id="_host_" value="1234">
+                <input type="hidden" id="_ip_" value="5678">
+
+            </div>
+        </div>
+    </form>
+{% endblock %}
+{% block scripts  %}
+<script>
+    function edit() {
+        document.getElementById("host").value =document.getElementById("_host_").value;
+        document.getElementById("ip").value = document.getElementById("_ip_").value;
+        alert(document.getElementById("_host_").value)
+    }
+</script>
+{% endblock %}

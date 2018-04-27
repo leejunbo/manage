@@ -1,0 +1,305 @@
+@charset "utf-8";
+/*重置*/
+body,h1,h2,h3,h4,h5,dl,dd,dt,p,ul,li,ol{ margin:0; padding:0;}
+input,select,form,textarea,button{ border:none; margin:0;outline:none; padding:0; appearance:none;}
+h1,h2,h3,h4,h5{ font-weight:normal;}
+img{ border:none;}
+a{ text-decoration:none;}
+body{ font-size:14px; font-family:"微软雅黑";}
+li{ list-style-type:none;}
+body,html{ width:100%; height: 100%;}
+
+.top_box{
+	background:url(../images/top_line.png) no-repeat center bottom;
+	padding-bottom: 4px;
+	height: 80px;
+	margin-bottom: 70px;
+}
+.wid_con{
+	width: 1200px;
+	overflow: hidden;
+	margin:0 auto;
+}
+.top_logo{
+	float: left;
+    margin: 15px 0;
+}
+.top_logo a{
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 16px;
+    width: 210px;
+    height: 50px;
+    background:url(../images/logo.png) no-repeat left 1px center;
+}
+.top_logo img{
+    display: block;
+    width: 150px;
+    height: 50px;
+}
+.top_logo span{
+	display: inline-block;
+	vertical-align: middle;
+	border-left: #2c8fcd solid 1px;
+	font-size: 24px;
+	color: #2c8fcd;
+	height: 50px;
+	line-height: 50px;
+	padding-left: 20px;
+}
+.top_menu{
+	float: right;
+	position: relative;
+}
+.top_menu i{
+	position: absolute;
+	bottom: 0;
+	left: 69px;
+	width: 40px;
+	height: 2px;
+	background-color: #2c8fcd;
+}
+.top_menu ul{
+	overflow: hidden;
+	margin-top: 40px;
+}
+.top_menu ul li{
+	float: left;
+	margin-left: 28px;
+	padding:0 2px;
+}
+.top_menu ul li:first-child{
+	margin-left: 0;
+}
+.top_menu ul li a{
+	display: block;
+	font-size: 16px;
+	color: #666;
+	padding-bottom: 7px;
+}
+.top_menu ul li.cur a{
+	color: #2c8fcd;
+}
+
+.loginbox{
+	width: 1100px;
+	margin:0 auto;
+	overflow: hidden;
+	min-height: 440px;
+}
+.border_box{
+	float: left;
+	width: 720px;
+	height: 440px;
+}
+.login_con{
+	float: right;
+	width: 340px;
+	height: 440px;
+	overflow: hidden;
+}
+.login_con h1{
+	background-color: #2c8fcd;
+	text-align: center;
+	color: #fff;
+	font-size: 24px;
+	height: 70px;
+	line-height: 70px;
+}
+.text_box{
+	border: #ccc solid 1px;
+	border-top: none;
+	min-height: 369px;
+	background-color: #f0f0f0;
+}
+.text_box>div{
+	margin:0 30px;
+	padding:30px 0;
+}
+.text_box>div>div{
+	height: 46px;
+	margin-bottom: 20px;
+	position: relative;
+}
+.text_box>div>div i{
+	width: 22px;
+	height: 22px;
+	overflow: hidden;
+	margin:12px;
+	position: absolute;
+}
+.text_box>div>div input{
+	width: 276px;
+	height: 44px;
+	line-height: 44px;
+	background-color: #f5f5f5;
+	font-size: 16px;
+	font-family: "微软雅黑";
+	color: #333;
+	border: #ccc solid 1px;
+	text-indent: 44px;
+}
+.text_box input:focus{
+	border: #f00 solid 1px;
+}
+.text_box .yzm input{
+	width: 160px;
+}
+.text_box .yzm label {
+	width: 100px;
+	text-align: center;
+	display: inline-block;
+}
+.text_box h3{
+	overflow: hidden;
+	margin-top: 24px;
+}
+.text_box h3 a{
+	font-size: 14px;
+	color: #666;
+}
+.text_box h3 a:last-child{
+	float: right;
+}
+.text_box h3 a:hover{
+	text-decoration: underline;
+}
+.text_box button{
+	display: block;
+	width: 280px;
+	height: 50px;
+	font-size: 18px;
+	color: #fff;
+	line-height: 50px;
+	text-align: center;
+	background: url(../images/btn_bg.jpg);
+	font-family: "微软雅黑";
+	margin-top:20px;
+	cursor: pointer;
+}
+.text_box button:hover{
+	opacity: .9;
+}
+
+/*password_con*/
+.password_con{
+	float: left;
+	width: 600px;
+}
+.password_con .text_box{
+	border: none;
+	background: none;
+}
+.password_con .text_box>div{
+	padding: 20px 0;
+}
+.password_con .text_box>div>div i{
+	margin:14px;
+}
+.password_con .text_box>div>div input{
+	height: 48px;
+	line-height: 48px;
+	width: 400px;
+	background:none;
+	border-radius: 5px;
+}
+.password_con .text_box .yzm input{
+	width: 240px;
+}
+.password_con .text_box button{
+	width: 400px;
+	border-radius: 5px;
+	margin-top:60px;
+}
+.password_con .text_box .yzm label {
+	width: 160px;
+}
+.password_con .text_box>div>div span{
+	color: #f00;
+	margin-left:10px;
+}
+.password_txt h1{
+	color: #333;
+	font-size: 24px;
+	margin: 20px 0;
+}
+.password_txt p{
+	font-size: 14px;
+	color: #999;
+}
+.password_txt h2{
+	font-size: 16px;
+	color: #666;
+	margin-top: 80px;
+}
+.password_txt h2 a{
+	color: #2c8fcd;
+	font-weight: bold;
+}
+.password_txt h2 a:hover{
+	text-decoration:underline;
+}
+
+/*register_con*/
+.register_txt{
+	float: left;
+	width: 600px;
+}
+.register_txt h1{
+	font-size: 24px;
+	color: #333;
+	background:url(../images/jt.png) no-repeat right top 14px;
+	display: inline-block;
+	padding-right: 56px;
+	padding-bottom: 40px;
+}
+.register_txt img{
+	display: block;
+	margin-left: 40px;
+}
+.register_con{
+	float: right;
+	width: 500px;
+}
+.register_con h4{
+	margin-top:34px;
+}
+.register_con h4 a{
+	font-size: 16px;
+	color: #2c8fcd;
+}
+.register_con .text_box button{
+	margin-top:20px;
+}
+
+/*密码修改*/
+.password_con .pass_long{
+	height: 20px;
+	line-height: 20px;
+	margin-bottom: 20px;
+}
+.pass_long h1{
+	color: #666;
+	font-size: 16px;
+}
+
+/*footer*/
+.footer{
+	text-align: center;
+	margin:100px 0 50px;
+}
+.footer p{
+	font-size: 14px;
+	color: #999;
+	line-height: 26px;
+}
+.footer p a{
+	background:url(../images/gongxin.png) no-repeat center left;
+	padding-left: 24px;
+	margin-right:16px;
+}
+.footer p span{
+	background:url(../images/beian.png) no-repeat center left;
+	padding-left: 24px;
+	margin-left:16px;
+}

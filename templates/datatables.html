@@ -1,0 +1,153 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <div class="panel panel-default">
+        <div class="panel-heading">作业信息</div>
+        <div class="panel-body">
+            <table id="jobs" class="display" width="100%" style="table-layout:fixed">
+                <thead>
+                <tr>
+                    <th>编号</th>
+                    <th>域名</th>
+                    <th>IP</th>
+                    <th>修改|删除</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block scripts %}
+    <script>
+        var data = [
+            [
+                "Tiger Nixon",
+                "System Architect",
+                "Edinburgh",
+                "5421",
+            ],
+            [
+                "Garrett Winters",
+                "Director",
+                "Edinburgh",
+                "8422",
+            ],
+            [
+                "Tiger Nixon1",
+                "System Architect1",
+                "Edinburgh1",
+                "54211",
+            ],
+            [
+                "Garrett Winters",
+                "Director",
+                "Edinburgh",
+                "8422",
+            ],
+            [
+                "Tiger Nixon1",
+                "System Architect1",
+                "Edinburgh1",
+                "54211",
+            ],
+            [
+                "Garrett Winters",
+                "Director",
+                "Edinburgh",
+                "8422",
+            ],
+            [
+                "Tiger Nixon1",
+                "System Architect1",
+                "Edinburgh1",
+                "54211",
+            ],
+            [
+                "Garrett Winters",
+                "Director",
+                "Edinburgh",
+                "8422",
+            ],
+            [
+                "Tiger Nixon1",
+                "System Architect1",
+                "Edinburgh1",
+                "54211",
+            ],
+            [
+                "Garrett Winters",
+                "Director",
+                "Edinburgh",
+                "8422",
+            ],
+            [
+                "Tiger Nixon1",
+                "System Architect1",
+                "Edinburgh1",
+                "54211",
+            ],
+            [
+                "Garrett Winters",
+                "Director",
+                "Edinburgh",
+                "8422",
+            ],
+            [
+                "Tiger Nixon1",
+                "System Architect1",
+                "Edinburgh1",
+                "54211",
+            ],
+            [
+                "Garrett Winters",
+                "Director",
+                "Edinburgh",
+                "8422",
+            ],
+            [
+                "Tiger Nixon1",
+                "System Architect1",
+                "Edinburgh1",
+                "54211",
+            ],
+            [
+                "Garrett Winters",
+                "Director",
+                "Edinburgh",
+                "8422",
+            ],
+            [
+                "Tiger Nixon1",
+                "System Architect1",
+                "Edinburgh1",
+                "54211",
+            ],
+            [
+                "Garrett Winters",
+                "Director",
+                "Edinburgh",
+                "8422",
+            ],
+            [
+                "Tiger Nixon1",
+                "System Architect1",
+                "Edinburgh1",
+                "54211",
+            ],
+            [
+                "Garrett Winters1",
+                "Director1",
+                "Edinburgh1",
+                "84221",
+            ]
+        ];
+
+        //然后 DataTables 这样初始化：
+        $('#jobs').DataTable({
+            data: data
+        });
+        $('#jobs').removeClass('display').addClass('table table-striped table-bordered table-hover');
+    </script>
+{% endblock %}

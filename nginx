@@ -1,0 +1,48 @@
+#!/bin/bash
+#chkconfig:2345 80 05 --指定在哪几个级别执行，0一般指关机，6指的是重启，其他为正常启动。80为启动的优先级，05为关闭的优先级别
+
+RETVAL=0
+PROCESS=/usr/sbin/nginx   #启动进程的命令
+NAME=nginx                                  #进程名称
+
+start(){ #启动服务的入口函数
+        ID=`ps -ef | grep "$NAME" | grep -v "grep" | awk '{print $2}'`   #获取进程 端口
+
+        if [ ! $ID ]; then                         #判断进程是否 启动
+           echo "start $NAME ... "
+           $PROCESS                                #如果没有启动 则启动
+           echo "start $NAME service  sucess !!!"
+        else
+           echo "$NAME is running..."
+        fi
+}
+
+
+stop(){ #关闭服务的入口函数
+        ID=`ps -ef | grep "nginx" | grep -v "grep" | awk '{print $2}'`
+
+        for i in $ID                              #循环
+        do
+           echo "$NAME  Kill the $1 process [ $i ]"
+           kill -9 $i                             #杀死进程
+        done
+
+        echo  "stop $NAME service sucess !!!"
+}
+
+#使用case选择
+case $1 in
+start)
+start
+;;
+stop)
+stop
+;;
+restart)
+stop
+start
+;;
+*)
+echo "error choice ! please input start or stop";;
+esac
+exit $RETVA

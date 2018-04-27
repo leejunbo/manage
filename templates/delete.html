@@ -1,0 +1,20 @@
+<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #005cbf;">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span>
+                </button>
+                <h5 class="modal-title" id="deleteModalLabel">确认信息删除</h5>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="del_id">
+                <h3>确定要删除该信息？</h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" onclick="deleteInfo()">确定</button>
+            </div>
+        </div>
+    </div>
+</div>

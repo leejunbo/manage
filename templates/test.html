@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jquery Ajax Test</title>
+    <script src="/static/jquery-3.3.1.min.js">
+    </script>
+ <script>
+     function update() {
+         var data = {}
+             data['id'] = '1'
+             data['host'] = '2'
+             data['ip'] ='3'
+         $.ajax({
+             type: 'POST',
+             url: "/save",
+             data: JSON.stringify(data),
+             contentType: 'application/json; charset=UTF-8',
+             dataType: 'json', // 注意：这里是指希望服务端返回json格式的数据
+             success: function (data) {
+
+             },// 这里的data就是json格式的数据
+             error: function (xhr, type) {
+                 alert(data.ip)
+             }
+         });
+     }
+</script>
+
+</head>
+<body>
+<h1>Ajax Test</h1>
+<a style="color:#f00;cursor:pointer;text-align: center" onclick="update()">删除</a>
+</body>
+</html>
